@@ -20,6 +20,7 @@ models:
         - not_null
         
       - name: region_name
+        description : '{{ doc("region_name") }}'
         tests:
         - accepted_values:
             values:
