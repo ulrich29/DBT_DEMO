@@ -28,6 +28,10 @@ customer_orders as (
     group by 1
 
 ),
+nation as (
+
+    select * from {{ ref ('stg_nation') }}
+),
 
 final as (
 
@@ -40,6 +44,7 @@ final as (
        customers.customer_phone,
        customer_orders.first_order_date,
        customer_orders.most_recent_order_date,
+       nation.nation_name,
        coalesce(customer_orders.number_of_orders,0) as number_of_orders
 
     from customers
