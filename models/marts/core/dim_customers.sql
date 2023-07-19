@@ -41,7 +41,6 @@ final as (
        customers.nation_id,
        customers.customer_name,
        customers.customer_adresse,
-       customers.customer_pays,
        customers.customer_phone,
        customer_orders.first_order_date,
        customer_orders.most_recent_order_date,
