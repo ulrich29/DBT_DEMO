@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: mon_commerce
+    description: replication de la base de données opérationnelle en charge des ventes au comptoir sur Odoo
     database: dbt  
     schema: raw  
     tables:
