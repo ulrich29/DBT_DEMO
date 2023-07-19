@@ -1,3 +1,7 @@
+{{ 
+    config(schema='service')
+}}
+
 with region as (
     select * from {{ ref ('stg_region') }}
 ),

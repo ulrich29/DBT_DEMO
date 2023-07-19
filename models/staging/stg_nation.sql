@@ -1,4 +1,8 @@
 
+{{ 
+    config(schema='staging')
+}}
+
 with nation as (
     select 
        N_NATIONKEY      as nation_id,

@@ -1,3 +1,6 @@
+{{ 
+    config(schema='staging')
+}}
 
 with region as (
     select 
