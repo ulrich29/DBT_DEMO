@@ -1,4 +1,8 @@
 
+{{ 
+    config(schema='staging')
+}}
+
 with customer as (
     select 
        C_CUSTKEY     as customer_id,
