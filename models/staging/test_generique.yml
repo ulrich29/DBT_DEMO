@@ -2,15 +2,19 @@ version: 2
 
 models:
   - name: stg_customers
+    description: Unicité du client
     columns:
       - name:  customer_id
+        description: Clé primaire de stg_customers
         tests: 
           - unique
           - not_null
 
   - name: stg_region
+    description: Unicité de la région
     columns:
       - name:  region_id
+        description : Clé primaire de la région
         tests:
         - unique
         - not_null
@@ -24,6 +28,8 @@ models:
               - ASIA
               - EUROPE
               - MIDDLE EAST
+
+  - name: stg_orders 
               
 
           
