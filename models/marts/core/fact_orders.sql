@@ -1,4 +1,4 @@
-{%- set commande_priorites = ['bank_1','Bank_2','bank_3','bank_6'] -%}
+{%- set commande_priorites = ['1-URGENT','2-HIGH','3-MEDIUM','4-NOT SPECIFIED','5-LOW'] -%}
 
 
 with orders  as (
@@ -18,7 +18,7 @@ pivoted as (
 
 
 
-    {% for priorite in commande_priorites -%}
+    {%- for priorite in commande_priorites %}
 
     sum(case when order_priority='{{ priorite }}' then order_amount else 0 end) as {{ priorite }}_amount
 
@@ -27,10 +27,14 @@ pivoted as (
     {%- endif -%}
 
 
-    {%- endfor -%}
+    {%- endfor %}
 
    from orders
         left join customers using (customer_id) 
+    group by 
+    orders.order_id,
+    orders.customer_id,
+    customers.nation_id
 )
 
 select * from pivoted
