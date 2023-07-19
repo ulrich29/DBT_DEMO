@@ -16,11 +16,11 @@ models:
         - not_null
         - accepted_values:
             values:
-              - "AFRICA"
-              - "AMERICA"
-              - "ASIA"
-              - "EUROPE"
-              - "MIDDLE EAST"
+              - AFRICA
+              - AMERICA
+              - ASIA
+              - EUROPE
+              - MIDDLE EAST
               
 
           
