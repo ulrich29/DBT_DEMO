@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: mon_commerce
+    database: dbt  
+    schema: raw  
+    tables:
+      - name: orders
+      - name: customer
+      - name: nation
+      - name: region
+

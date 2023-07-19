@@ -3,7 +3,13 @@
     config(schema='staging')
 }}
 
-with orders as (
+
+with orders_source as (
+
+    select * from {{ source ('mon_commerce','orders') }}
+),
+
+orders as (
     select 
     
        O_ORDERKEY       as order_id,
@@ -12,8 +18,7 @@ with orders as (
        O_ORDERDATE      as order_date,
        O_ORDERPRIORITY  as order_priority
 
-    
-    from dbt.raw.orders
+    from orders_source
 )
 
-select * from orders
+select * from orders 
