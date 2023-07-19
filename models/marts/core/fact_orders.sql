@@ -1,4 +1,4 @@
-{%- set commande_priorites = ['1-URGENT','2-HIGH','3-MEDIUM','4-NOT SPECIFIED','5-LOW'] -%}
+{% set commande_priorites = ["1-URGENT","2-HIGH","3-MEDIUM","4-NOT SPECIFIED","5-LOW"] %}
 
 
 with orders  as (
@@ -20,7 +20,7 @@ pivoted as (
 
     {%- for priorite in commande_priorites %}
 
-    sum(case when order_priority='{{ priorite }}' then order_amount else 0 end) as {{ priorite }}_amount
+    sum(case when order_priority='{{ priorite }}' then order_amount else 0 end) as "{{ priorite }}_amount"
 
     {%- if not loop.last -%}
         ,
