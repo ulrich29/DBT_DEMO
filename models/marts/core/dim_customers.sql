@@ -38,6 +38,7 @@ final as (
     select 
 
        customers.customer_id,
+       customers.nation_id,
        customers.customer_name,
        customers.customer_adresse,
        customers.customer_pays,
@@ -50,6 +51,7 @@ final as (
     from customers
     
     left join customer_orders using (customer_id)
+    left join nation using (nation_id)
     
 
 )
