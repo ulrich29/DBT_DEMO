@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name:  customer_id
+        tests: 
+          - unique
+          - not_null
+
+  - name: stg_region
+    columns:
+      - name:  region_id
+        tests:
+        - unique
+        - not_null
+        - accepted_values:
+            values:
+              - "AFRICA"
+              - "AMERICA"
+              - "ASIA"
+              - "EUROPE"
+              - "MIDDLE EAST"
+              
+
+          
