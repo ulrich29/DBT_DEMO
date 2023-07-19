@@ -7,8 +7,11 @@ sources:
     schema: raw  
     tables:
       - name: orders
+        description: liste brute des données de commandes
       - name: customer
+        description: liste brute des données de clients
       - name: nation
+        description: liste brute des données de pays
         loaded_at_field: _etl_loaded_at
         freshness: 
           warn_after:
@@ -19,4 +22,5 @@ sources:
             period: day
         
       - name: region
+        description: liste brute des données regions
 
