@@ -29,6 +29,7 @@ models:
               - ASIA
               - EUROPE
               - MIDDLE EAST
+              - NAMEK
 
   - name: stg_orders 
               
