@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Unicité du client
+    columns:
+      - name:  customer_id
+        description: Clé primaire de stg_customers
+        tests: 
+          - unique
+          - not_null
+
+  - name: stg_region
+    description: Unicité de la région
+    columns:
+      - name:  region_id
+        description : Clé primaire de la région
+        tests:
+        - unique
+        - not_null
+        
+      - name: region_name
+        description : '{{ doc("region_name") }}'
+        tests:
+        - accepted_values:
+            values:
+              - AFRICA
+              - AMERICA
+              - ASIA
+              - EUROPE
+              - MIDDLE EAST
+
+  - name: stg_orders 
+              
+
+          

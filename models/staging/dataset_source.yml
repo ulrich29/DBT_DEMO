@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: mon_commerce
+    description: replication de la base de données opérationnelle en charge des ventes au comptoir sur Odoo
+    database: dbt  
+    schema: raw  
+    tables:
+      - name: orders
+        description: liste brute des données de commandes
+      - name: customer
+        description: liste brute des données de clients
+      - name: nation
+        description: liste brute des données de pays
+        loaded_at_field: _etl_loaded_at
+        freshness: 
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        
+      - name: region
+        description: liste brute des données regions
+
